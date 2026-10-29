@@ -65,6 +65,7 @@ flowchart LR
 
 | Path | What |
 |---|---|
+| `SignalScanner.py` | the underlying signal generator, written by the repo owner before this project: scans the top-volume Binance USDⓈ-M perpetuals for Ichimoku (9/26/52) trend signals and draws a chart per signal. Public market-data endpoints only; it throttles itself from Binance's `X-MBX-USED-WEIGHT-1M` header and backs off on 418/429. Run it alone with `python SignalScanner.py` |
 | `desk/` | hourly scanner wrapper, paper books, pick rule, manual-trade sync (`PROTOCOL.md`, `PICKS.md` are the pre-registered rules) |
 | `auto/` | testnet auto-executor, policy, what-if replays |
 | `lab/` | research CLI (`lab.py`), one-time split (`prepare.py`), sealed-holdout checker (`holdout.py`) |
@@ -75,7 +76,6 @@ flowchart LR
 | `docs/` | architecture, research method, safety model |
 
 Not included:
-- `SignalScanner.py`, the signal generator that `desk.py` imports.
 - All data: sqlite databases, replay pickles, charts.
 - All secrets.
 

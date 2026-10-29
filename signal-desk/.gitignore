@@ -19,6 +19,5 @@ auto/PAUSE
 auto/auto.lock
 __pycache__/
 *.bak*
-# not part of the public release
-SignalScanner.py
 docs/talking-points.zh-TW.md
+signal_charts/
