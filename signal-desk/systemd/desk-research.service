@@ -1,0 +1,13 @@
+[Unit]
+Description=Signal Desk nightly research loop
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qt/ops
+Environment=HOME=/home/ubuntu
+EnvironmentFile=/home/ubuntu/.config/desk/claude.env
+ExecStart=/bin/bash -c '/home/ubuntu/venv/bin/python research.py >> research.log 2>&1'
+TimeoutStartSec=3000
+Nice=10

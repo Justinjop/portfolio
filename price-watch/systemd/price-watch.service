@@ -1,0 +1,10 @@
+# Copy both files to ~/.config/systemd/user/ and run:
+#   systemctl --user daemon-reload && systemctl --user enable --now price-watch.timer
+# Edit WorkingDirectory to where watch.py lives.
+[Unit]
+Description=price-watch: check prices and send alerts
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/price-watch
+ExecStart=/usr/bin/python3 watch.py check

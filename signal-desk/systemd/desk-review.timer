@@ -1,0 +1,9 @@
+[Unit]
+Description=Signal Desk hourly Claude review at :06 UTC
+
+[Timer]
+OnCalendar=*-*-* *:06:00 UTC
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

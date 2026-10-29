@@ -1,0 +1,13 @@
+[Unit]
+Description=Daily Claude Code skill recommendations to Discord
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qt/news
+EnvironmentFile=/home/ubuntu/.config/desk/claude.env
+Environment=HOME=/home/ubuntu
+ExecStart=/bin/bash -c '/home/ubuntu/venv/bin/python skills.py >> news.log 2>&1'
+TimeoutStartSec=1200
+Nice=5

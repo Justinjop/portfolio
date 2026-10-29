@@ -1,0 +1,7 @@
+{
+  "webhook": "crypto news channel",
+  "tech_webhook": "tech news channel",
+  "skills_webhook": "daily tool recommendations",
+  "research_webhook": "nightly research + daily tuning reports",
+  "alert_webhook": "watchdog alerts, repair reports, daily backup"
+}

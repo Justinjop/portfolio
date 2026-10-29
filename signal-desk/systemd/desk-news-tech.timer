@@ -1,0 +1,9 @@
+[Unit]
+Description=Hourly tech-industry news digest at :40 UTC
+
+[Timer]
+OnCalendar=*-*-* *:40:00 UTC
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

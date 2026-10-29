@@ -1,0 +1,12 @@
+[Unit]
+Description=Signal Desk testnet auto-executor (every pick, exchange-side stops)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qt/auto
+Environment=HOME=/home/ubuntu
+Environment=DESK_TESTNET_ENV=/home/ubuntu/.config/desk/testnet.env
+ExecStart=/bin/bash -c 'set -o pipefail; /home/ubuntu/venv/bin/python auto.py run 2>&1 | tee -a auto.log | tail -n 3'
+TimeoutStartSec=240

@@ -1,0 +1,9 @@
+[Unit]
+Description=Signal Desk daily backup (timer)
+
+[Timer]
+OnCalendar=*-*-* 02:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

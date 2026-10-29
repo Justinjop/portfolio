@@ -1,0 +1,24 @@
+# secrets: real config lives outside the repo
+*.env
+!*.example.env
+.env*
+phone.json
+news.json
+claude.env
+# data
+*.sqlite
+*.sqlite-*
+*.pkl
+charts/
+data/
+backups/
+reports/
+*.log
+watchdog_state.json
+auto/PAUSE
+auto/auto.lock
+__pycache__/
+*.bak*
+# not part of the public release
+SignalScanner.py
+docs/talking-points.zh-TW.md

@@ -1,0 +1,11 @@
+[Unit]
+Description=Signal Desk hourly Claude review
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+EnvironmentFile=/home/ubuntu/.config/desk/claude.env
+Environment=HOME=/home/ubuntu
+ExecStart=/home/ubuntu/qt/run_review.sh
+TimeoutStartSec=1800

@@ -1,0 +1,9 @@
+[Unit]
+Description=Signal Desk nightly research loop (timer)
+
+[Timer]
+OnCalendar=*-*-* 18:10:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

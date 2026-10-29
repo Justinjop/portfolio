@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "risk_pct": 0.25,
+  "risk_mult_A": 1.0,
+  "risk_mult_B": 1.0,
+  "sl_atr": 2.5,
+  "tp_atr": null,
+  "be_atr": null,
+  "max_hold_h": 72,
+  "opposite_exit": true,
+  "max_open": 30,
+  "max_same_side": 20,
+  "max_gross_x": 2.5,
+  "max_notional_pct": 25,
+  "daily_stop_pct": 5
+}

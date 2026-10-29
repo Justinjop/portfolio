@@ -1,0 +1,14 @@
+[Unit]
+Description=Signal Desk daily risk/money-management tuning (restricted Claude)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qt/ops
+Environment=HOME=/home/ubuntu
+Environment=DESK_TESTNET_ENV=/home/ubuntu/.config/desk/testnet.env
+EnvironmentFile=/home/ubuntu/.config/desk/claude.env
+ExecStart=/bin/bash -c '/home/ubuntu/venv/bin/python autotune.py >> autotune.log 2>&1'
+TimeoutStartSec=2400
+Nice=10

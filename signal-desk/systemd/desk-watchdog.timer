@@ -1,0 +1,9 @@
+[Unit]
+Description=Signal Desk watchdog alerts (timer)
+
+[Timer]
+OnCalendar=*:03/15
+
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Signal Desk daily backup
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qt/ops
+Environment=HOME=/home/ubuntu
+ExecStart=/bin/bash -c '/home/ubuntu/venv/bin/python backup.py >> backup.log 2>&1'
+TimeoutStartSec=600
+Nice=5

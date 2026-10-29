@@ -1,0 +1,9 @@
+[Unit]
+Description=Hourly crypto news digest at :20 UTC
+
+[Timer]
+OnCalendar=*-*-* *:20:00 UTC
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Signal Desk hourly scan (SignalScanner picks, Discord, testnet sync)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/qt/desk
+Environment=DESK_TESTNET_ENV=/home/ubuntu/.config/desk/testnet.env
+Environment=MPLBACKEND=Agg
+ExecStart=/bin/bash -c 'out=$(/home/ubuntu/venv/bin/python desk.py hourly 2>&1); rc=$?; echo "$(date -u "+%%F %%T") $(echo "$out" | tail -n1)" >> daemon.log; [ $rc -eq 0 ] || echo "$out" | tail -n 20 >> daemon.log; exit $rc'
+TimeoutStartSec=1800
+Nice=5

@@ -1,0 +1,44 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "refusal_fallback": true,
+  "channels": [
+    {
+      "name": "tw-tech",
+      "title": "💻 科技新聞摘要",
+      "audience": "在台灣、關心科技產業的上班族",
+      "language": "Traditional Chinese (zh-TW)",
+      "instructions": "依主題分段（AI、半導體、大型科技公司、其他），挑 6–10 則最重要的，重複報導合併。每則一行：粗體一句話重點 + [來源](網址)。最後一行寫一句話總結。不要給投資建議。",
+      "feeds": {
+        "科技新報": "https://technews.tw/feed/",
+        "iThome": "https://www.ithome.com.tw/rss",
+        "The Verge": "https://www.theverge.com/rss/index.xml",
+        "Ars Technica": "https://feeds.arstechnica.com/arstechnica/index"
+      },
+      "include": [],
+      "exclude": ["優惠", "折扣碼", "deal"],
+      "window_hours": 6,
+      "max_items": 40,
+      "max_chars": 1800,
+      "destinations": {
+        "discord_webhook": "https://discord.com/api/webhooks/<id>/<token>",
+        "telegram": {"token": "", "chat": ""},
+        "line": {"token": "", "to": ""}
+      }
+    },
+    {
+      "name": "game-news",
+      "title": "🎮 遊戲新聞",
+      "audience": "a gaming community on Discord",
+      "language": "Traditional Chinese (zh-TW)",
+      "instructions": "Pick the 5-8 most interesting game news items (releases, big updates, sales, studio news). One line each: bold takeaway + [source](url).",
+      "feeds": {"PC Gamer": "https://www.pcgamer.com/rss/", "Eurogamer": "https://www.eurogamer.net/feed"},
+      "include": [],
+      "exclude": [],
+      "window_hours": 24,
+      "max_items": 30,
+      "empty_text": "今天沒有新的遊戲新聞。",
+      "destinations": {"discord_webhook": "https://discord.com/api/webhooks/<id>/<token>"}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Signal Desk hourly at :01:30 UTC
+
+[Timer]
+OnCalendar=*-*-* *:01:30 UTC
+Persistent=true
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target

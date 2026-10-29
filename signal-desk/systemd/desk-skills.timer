@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Claude skill recommendations at 01:00 UTC (09:00 Taipei)
+
+[Timer]
+OnCalendar=*-*-* 01:00:00 UTC
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target
